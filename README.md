@@ -3,7 +3,7 @@ An intuitive light-weight software suite for Linux, in C++, geared toward hams t
 
 Goals:
 
-RX voice and data on bands 160m to 23cm, and all intermediate bands
+RX voice and data on bands 160m to 23cm, and all intermediate bands <br>
 TX voice and data on bands 160m to 23cm, and all intermediate bands
 
 Opperating the following modes and modulations:
