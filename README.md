@@ -6,11 +6,12 @@ Goals:
 RX voice and data on bands 160m to 23cm, and all intermediate bands
 TX voice and data on bands 160m to 23cm, and all intermediate bands
 
-modulate in:
+Opperating the following modes and modulations:
 
 CW
 FM
 AM
+qAM
 LSB
 SSB
 USB
@@ -27,9 +28,6 @@ SSTV
 VSB
 OOK
 
-qAM
-
-with modes:
 
 
 
