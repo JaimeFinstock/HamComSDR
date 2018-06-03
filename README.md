@@ -4,72 +4,74 @@ An intuitive light-weight software suite for Linux, in C++, geared toward hams t
 Goals:
 
 RX voice and data on bands 160m to 23cm, and all intermediate bands <br>
-TX voice and data on bands 160m to 23cm, and all intermediate bands
+TX voice and data on bands 160m to 23cm, and all intermediate bands <br>
 
-Opperating the following modes and modulations:
+Opperating the following modes and modulations: <br> 
 
-CW
-  -MCW
-  -FSCW
-FM
-AM
-PM
-qAM
-DSB-SC
-ISB
-LSB
-SSB
-USB
-DMR
-ASK
-FSK
-  -RTTY
-  -G-TOR
-  -HF Packet
-MSK
-MFSK
-  -MFSK16
-  -FSK441
-  -JT6M
-  -JT65
-  -JT65HF
-  -FT8
-  -Olivia
-  -Contestia
-  -DominoEX
-PSK
-  -PSK31
-  -PSK63
-  -Clover
-qPSK
-  -qPSK 31
-  -qPSK 63
-MT63
-THROB
-PACTOR
-AMTOR
-SITOR
-ATV
-SSTV
-VSB
-OOK
-OSCAR
-QRP
-WSPR
-Hellschreiber
-Spread Spectrum
-  -FHSS
-  -DSSS
-  -THSS
-  -CSS
+  (Focusing primarily on data over PSK for UHF/VHF)<br>
 
-AND MANY, MANY MORE!!!
+CW <br>
+  -MCW <br>
+  -FSCW <br>
+FM<br>
+AM<br>
+PM<br>
+qAM<br>
+DSB-SC<br>
+ISB<br>
+LSB<br>
+SSB<br>
+USB<br>
+DMR<br>
+ASK<br>
+FSK<br>
+  -RTTY<br>
+  -G-TOR<br>
+  -HF Packet<br>
+MSK<br>
+MFSK<br>
+  -MFSK16<br>
+  -FSK441<br>
+  -JT6M<br>
+  -JT65<br>
+  -JT65HF<br>
+  -FT8<br>
+  -Olivia<br>
+  -Contestia<br>
+  -DominoEX<br>
+PSK<br>
+  -PSK31<br>
+  -PSK63<br>
+  -Clover<br>
+qPSK<br>
+  -qPSK31<br>
+  -qPSK 63<br>
+MT63<br>
+THROB<br>
+PACTOR<br>
+AMTOR<br>
+SITOR<br>
+ATV<br>
+SSTV<br>
+VSB<br>
+OOK<br>
+OSCAR<br>
+QRP<br>
+WSPR<br>
+Hellschreiber<br>
+Spread Spectrum<br>
+  -FHSS<br>
+  -DSSS<br>
+  -THSS<br>
+  -CSS<br>
 
-Command line
-N-Curses
-Gui
+AND MANY, MANY MORE!!!<br>
 
-Android App
+Command line<br>
+N-Curses<br>
+Gui<br>
+
+Android App<br>
 
 
 
