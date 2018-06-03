@@ -65,7 +65,11 @@ Spread Spectrum
 
 AND MANY, MANY MORE!!!
 
+Command line
+N-Curses
+Gui
 
+Android App
 
 
 
