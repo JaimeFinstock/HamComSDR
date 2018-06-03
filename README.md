@@ -3,12 +3,12 @@ An intuitive light-weight software suite for Linux, in C++, geared toward hams t
 
 Goals:
 
+    (Focusing primarily on RX/TX of data over PSK for UHF/VHF)<br>
+
 RX voice and data on bands 160m to 23cm, and all intermediate bands <br>
 TX voice and data on bands 160m to 23cm, and all intermediate bands <br>
 
 Opperating the following modes and modulations: <br> 
-
-  (Focusing primarily on data over PSK for UHF/VHF)<br>
 
 CW <br>
   -MCW <br>
