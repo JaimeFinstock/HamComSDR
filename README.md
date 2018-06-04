@@ -66,18 +66,25 @@ Spread Spectrum<br>
   -DSSS<br>
   -THSS<br>
   -CSS<br>
-
+<br>
 AND MANY, MANY MORE!!!<br>
-
+<br>
+Strategy:
+<br>
 Program will develope in phases:<br>
+<br>
 Phase 0: port C++ Library PSKCoreDLL or a derivative to Lime SDR<br>
 Phase 1: Command line functionality<br>
 Phase 2: Integrate more modes/modulations
 Phase 3:N-Curses interface<br>
 Phase 4:GUI<br>
 Phase 5:Android App<br>
-
-
+<br>
+<br>
 Phase:0
-
+<br>
 [![PSKCore_DLLStructure.jpg](https://s15.postimg.cc/c0rq45jij/PSKCore_DLLStructure.jpg)](https://postimg.cc/image/9jfywvzlz/)
+<br>
+This is the structure of PSKCoreDLL. We will attempt to intercept the signal at I Q points (blue) and stream in the Lime SDR I and Q inputs.
+<br>
+Perhaps we need to include the occilators, in that case we will intersect at red points
