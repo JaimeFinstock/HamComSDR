@@ -87,7 +87,9 @@ Phase:0
 <br>
 This is the structure of PSKCoreDLL TX Section. We will attempt to intercept the signal at I Q points (red) and stream into the Lime SDR Suite driver I and Q inputs.
 <br>
-RX Portion<BR>
+Overall Block Diagram of the PSK31DLL Recieve Section<BR>
+    <br>
+    <br>
 [![RX_structure_EDIT.jpg](https://s15.postimg.cc/du3tjw6l7/RX_structure_EDIT.jpg)](https://postimg.cc/image/ye8nidmc7/)
 <br>
 This is the structure of PSKCoreDLL RX Section. We will attempt to input the signal at I Q points (red) from the Lime SDR I and Q outputs
