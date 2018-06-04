@@ -1,5 +1,6 @@
 # HamComSDR
-An intuitive light-weight software suite for Linux, and Android, in C++, geared toward hams that want to play around with SDR
+An intuitive light-weight software suite for Linux, and Android, in C++
+    -geared toward hams that want to play around with SDR
 
 Goals:
 
