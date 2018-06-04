@@ -83,7 +83,7 @@ Phase 5:Android App<br>
 <br>
 Phase:0
 <br>
-[![PSKCore_DLLStructure.jpg](https://s15.postimg.cc/c0rq45jij/PSKCore_DLLStructure.jpg)](https://postimg.cc/image/9jfywvzlz/)
+[![TXStructure.jpg](https://s15.postimg.cc/mvicxizdn/TXStructure.jpg)](https://postimg.cc/image/i9m8p6duf/)
 <br>
 This is the structure of PSKCoreDLL TX Section. We will attempt to intercept the signal at I Q points (blue) and stream in the Lime SDR I and Q inputs.
 <br>
