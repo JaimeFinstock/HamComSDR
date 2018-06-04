@@ -89,7 +89,7 @@ This is the structure of PSKCoreDLL TX Section. We will attempt to intercept the
 <br>
 Perhaps we need to include the occilators, in that case we will intersect at red points<br>
 <br>
-We will route the signal and input into the Lime Suite driver I and Q inputs<br>
+We will route the I an Q Signals in and out of the Lime Suite driver<br>
 <br>
 
 [![dependencies_EDIT.jpg](https://s15.postimg.cc/d74wuump7/dependencies_EDIT.jpg)](https://postimg.cc/image/nh7bu3ckn/)
