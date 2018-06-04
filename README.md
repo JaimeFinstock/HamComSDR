@@ -92,9 +92,9 @@ This is the structure of PSKCoreDLL TX Section. We will attempt to intercept the
     <br>
 [![RX_structure_EDIT.jpg](https://s15.postimg.cc/du3tjw6l7/RX_structure_EDIT.jpg)](https://postimg.cc/image/ye8nidmc7/)
 <br>
-This is the structure of PSKCoreDLL RX Section. We will attempt to input the signal at I Q points (red) from the Lime SDR I and Q outputs
-<br>
-We will route the I an Q Signals in and out of the Lime Suite driver<br>
+This is the structure of PSKCoreDLL RX Section. We will attempt to input the signal at I Q points (red) from the Lime SDR suite driver I and Q outputs.
+<br><br><br>
+We will then route the I an Q Signals in and out of the Lime Suite driver<br>
 <br>
 
 [![dependencies_EDIT.jpg](https://s15.postimg.cc/d74wuump7/dependencies_EDIT.jpg)](https://postimg.cc/image/nh7bu3ckn/)
