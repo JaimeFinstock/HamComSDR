@@ -87,4 +87,9 @@ Phase:0
 <br>
 This is the structure of PSKCoreDLL. We will attempt to intercept the signal at I Q points (blue) and stream in the Lime SDR I and Q inputs.
 <br>
-Perhaps we need to include the occilators, in that case we will intersect at red points
+Perhaps we need to include the occilators, in that case we will intersect at red points<br>
+<br>
+We will route the signal and input into the Lime Suite driver I and Q inputs<br>
+<br>
+
+[![dependencies_EDIT.jpg](https://s15.postimg.cc/rsrc5eju3/dependencies_EDIT.jpg)](https://postimg.cc/image/66cbodl9j/)
