@@ -85,7 +85,7 @@ Phase:0
 <br>
 [![TXStructure.jpg](https://s15.postimg.cc/mvicxizdn/TXStructure.jpg)](https://postimg.cc/image/i9m8p6duf/)
 <br>
-This is the structure of PSKCoreDLL TX Section. We will attempt to intercept the signal at I Q points (blue) and stream in the Lime SDR I and Q inputs.
+This is the structure of PSKCoreDLL TX Section. We will attempt to intercept the signal at I Q points (red) and stream into the Lime SDR Suite driver I and Q inputs.
 <br>
 Perhaps we need to include the occilators, in that case we will intersect at red points<br>
 <br>
