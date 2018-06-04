@@ -78,4 +78,6 @@ Phase 4:GUI<br>
 Phase 5:Android App<br>
 
 
+Phase:0
 
+[![Screen_Shot_2018-06-04_at_1.44.09_PM.png](https://s15.postimg.cc/doqviwzzv/Screen_Shot_2018-06-04_at_1.44.09_PM.png)](https://postimg.cc/image/9sdjmxf07/)
