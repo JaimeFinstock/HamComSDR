@@ -75,7 +75,7 @@ Program will develope in phases:<br>
 <br>
 Phase 0: port C++ Library PSKCoreDLL or a derivative to Lime SDR<br>
 Phase 1: Command line functionality<br>
-Phase 2: Integrate more modes/modulations
+Phase 2: Integrate more modes/modulations<br>
 Phase 3:N-Curses interface<br>
 Phase 4:GUI<br>
 Phase 5:Android App<br>
