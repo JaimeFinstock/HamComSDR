@@ -67,11 +67,12 @@ Spread Spectrum<br>
 
 AND MANY, MANY MORE!!!<br>
 
-Command line<br>
-N-Curses<br>
-Gui<br>
-
-Android App<br>
+Program will develope in phases:
+Phase 0: port C++ Library PSKCoreDLL or a derivative to Lime SDR
+Phase 1: Command line functionality<br>
+Phase 2:N-Curses interface<br>
+Phase 3:GUI<br>
+Phase 4:Android App<br>
 
 
 
