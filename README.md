@@ -95,3 +95,5 @@ We will route the signal and input into the Lime Suite driver I and Q inputs<br>
 [![dependencies_EDIT.jpg](https://s15.postimg.cc/rsrc5eju3/dependencies_EDIT.jpg)](https://postimg.cc/image/66cbodl9j/)
 
 This is the structure of PSKCoreDLL RX Section. We will attempt to input the signal at I Q points(red) from the Lime SDR I and Q outputs
+
+[![RX_structure_EDIT.jpg](https://s15.postimg.cc/du3tjw6l7/RX_structure_EDIT.jpg)](https://postimg.cc/image/ye8nidmc7/)
