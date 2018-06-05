@@ -96,7 +96,8 @@ This is the structure of PSKCoreDLL RX Section. We will attempt to input the sig
 <br><br><br>
 We will then route the I an Q Signals in and out of the Lime Suite driver<br>
 <br>
-
-
-
-[![image.png](https://s15.postimg.cc/419l3vfor/image.png)](https://postimg.cc/image/xt6nj22hz/)
+[![RX_DSP.png](https://s15.postimg.cc/aop6tnfcb/RX_DSP.png)](https://postimg.cc/image/b1gkztxlz/)
+    <Br>
+        <br>
+        <br>
+      [![TX_DSP.jpg](https://s15.postimg.cc/753940ke3/TX_DSP.jpg)](https://postimg.cc/image/hrx29fsjb/)
