@@ -1,19 +1,11 @@
 # Compile QRadioLink on Ubuntu
-Compile qradiolink on Ubuntu from Source
 
-## Build Boost 1.62
+QRadioLink does not provide binaries for Ubuntu. Building from source is the only option.
+
+## GNU Radio
 
 ```
-# https://stackoverflow.com/questions/12578499/how-to-install-boost-on-ubuntu
-sudo apt install python-dev autotools-dev libicu-dev build-essential libbz2-dev
-curl -JLO https://sourceforge.net/projects/boost/files/boost/1.62.0/boost_1_62_0.tar.gz
-tar -xf boost_1_62_0.tar.gz
-cd boost_1_62_0
-
-./bootstrap.sh --prefix=/usr/
-./b2
-
-sudo ./b2 install 
+sudo apt install gnuradio gnuradio-dev
 ```
 
 ## Build gr-osmosdr
@@ -39,7 +31,23 @@ sudo apt install libasound2-dev libasound2 speex libspeex-dev libspeex-dev libsp
 
 ```
 
-## Compile QRadioLink
+
+## Build Boost 1.62
+
+```
+# https://stackoverflow.com/questions/12578499/how-to-install-boost-on-ubuntu
+sudo apt install python-dev autotools-dev libicu-dev build-essential libbz2-dev
+curl -JLO https://sourceforge.net/projects/boost/files/boost/1.62.0/boost_1_62_0.tar.gz
+tar -xf boost_1_62_0.tar.gz
+cd boost_1_62_0
+
+./bootstrap.sh --prefix=/usr/
+./b2
+
+sudo ./b2 install 
+```
+
+## Build QRadioLink
 
 ```
 git clone --depth 1 https://github.com/kantooon/qradiolink.git
