@@ -48,32 +48,33 @@ qmake-qt4 ..
 LD_LIBRARY_PATH=$LIME_INSTALL/lib CPATH=$LIME_INSTALL/include make
 ```
 
-Now you have `qradiolink` executable in `$LIME_SRC/qradiolink/build` directory. You will need to launch it with sudo, specifying the LD_LIBRARY_PATH.
+Now you have `qradiolink` executable in `$LIME_SRC/qradiolink/build` directory. You will need to specify the LD_LIBRARY_PATH when launching; we'll make a script for that.
 
-We can move the executable into `$LIME_INSTALL/bin`.
+First, move the executable into `$LIME_INSTALL/bin/`.
 
 ```sh
 mv qradiolink "$LIME_INSTALL/bin/"
 ```
 
-Finally and optinally we can make a script to launch it, so that we don't have to type in the env variables every time.
+Create the file qradiolink.sh, as below. Make sure to customize your LIME_INSTALL path above if yours is different.
 
 ```sh
 #!/bin/sh
 # qradiolink.sh
 
 LIME_INSTALL=$HOME/sdr_install # change this path to your install folder
-sudo LD_LIBRARY_PATH=$LIME_INSTALL/lib $LIME_INSTALL/bin/qradiolink
+LD_LIBRARY_PATH=$LIME_INSTALL/lib $LIME_INSTALL/bin/qradiolink
 ```
-
-Make sure to customize your LIME_INSTALL path above if yours is different. You can copy this file anywhere. For example:
+You can copy this file anywhere. For example:
 
 ```sh
 sudo cp qradiolink.sh /usr/local/bin/qradiolink
 sudo a+x /usr/local/bin/qradiolink
 ```
 
-Now you can launch and use the app. If you are limited on disk space, you can delete the `$LIME_SRC` directory (≈700 MB). You may want to keep it though, since now you can fairly easily update each component to the latest changes.
+Now you can launch and use the app. If you are limited on disk space, you can delete the `$LIME_SRC` directory (≈700 MB). You may want to keep it though, since now you can easily update each component to the latest changes.
+
+You can also zip the entire `$LIME_INSTALL` folder and move it to another machine, which will need only a few basic packages installed with `apt`.
 
 ## Device Setup
 
