@@ -8,9 +8,9 @@ This document is in development, therefore it has many errors. The instructions 
 
 ## Assumptions
 
-- You are running Ubuntu 16.04
+- You are running Ubuntu 16.04. However, the instructions should be easily adaptable to other Linux distributions.
+- You have a Lime board plugged in. However, this should be usable with all the boards that Soapy SDR supports.
 - Basics such as git, gcc and cmake installed.
-- You can use apt to install missing pieces.
 
 ## Install the SDR Stack
 
@@ -74,9 +74,17 @@ Make sure to customize your LIME_INSTALL path above if yours is different. You c
 sudo cp runqradio.sh /usr/local/bin/qradiolink
 sudo a+x /usr/local/bin/qradiolink
 ```
-Now you can launch the app. Make sure to go to the setup tab and update device args and the antenna names.
+Now you can launch and use the app. If you are limited on disk space, you can delete the `$LIME_SRC` directory. You may want to keep it though, since now you can fairly easily update each component to the latest changes. As of the time of writing this doc, the size of the source folder was 669 MB.
 
-For lime boards the device args should be `driver=lime,soapy=0`, the TX antenna can be either `BAND1` or `BAND2` and the RX antenna can be `LNAH` (for RX1_L) or `LNAH`, `LNAW`, `LB1` or `LB2`.
+## Device Setup
 
+The device needs to be configured in the "Setup" tab of QRadioLink. At minimum, device args and antenna names need to be changed from defaults.
 
-That's it. If you find errors in this document, we will appreciate you filing an issue, and will try our best to help.
+For lime boards:
+- the device args should be `driver=lime,soapy=0` or empty. The latter option will select the first SDR board the soapy finds.
+- the TX antenna can be either `BAND1` or `BAND2` 
+- the RX antenna can be `LNAH` (for RX1_L) or `LNAH`, `LNAW`, `LB1` or `LB2`.
+
+## Conclusion
+
+This is it. If you find errors in this document, we will appreciate you filing an issue, and will try our best to help.
