@@ -1,0 +1,238 @@
+Building a full SDR stack from source for LimeSDRHomeBuilding a full SDR stack from source for LimeSDR
+January 8, 2018Xavier RuppenSDRNo Comments
+Rationale
+
+Generally speaking, building from source offers one key advantage: it is the only way to test the latest features offered by the community. Moreover, if you intend to develop or fix bugs (or even help the community fix bugs), you will need to have a working and up-to-date software environment. All in all, compiling LimeSDR’s software stack is fairly straight forward. It is barely a matter of getting the right cmake options.
+
+While we want to compile as many software components as possible, it is sometimes easier to use dependencies given by your package manager. Mixing packages and source binaries is generally considered a bad idea, but building everything from scratch is tedious. We will try to bring the packaged dependencies to a minimum. In the event of a system upgrade, it is wiser to recompile everything to avoid API incompatibilities brought by library updates.
+
+Prerequisites
+
+Basic git usage (git clone)
+Linux command line (bash)
+Decent grasp on the compilation process
+Getting started
+
+We will install every libraries in a folder designated by the environment variable $LIME_INSTALL . We will also use a separate folder, $LIME_SRC, to collect the git sources. Therefore, the first thing to do is to spawn a shell and export both variables.
+
+export LIME_INSTALL=~/projects/sdr_install/
+export LIME_  src=https://ixquick-proxy.com/do/spg/proxy?ep=4c4259554830384b4769344853534d7752544a574d32705a5379394852426c4e56694271526a5553636c384d474134485744785654484a32637955634a526b3647426f484679315a5358456f434351645a306356436746454654354f48434168563263656446734d45515141533234635569643542534a4c4e306c4648417058526a70625144456d42484958596870465356414254323050516d397955486456644668424e443033447842755a47494c6353594b5458705a536931485252736355476f73515455444a5267395846736b55323138517a7372556d38425a55385056776f4b55323138424751435257524152423950587878664869744f55584a33644752425267354f5077734f47546755557a4967526d38516141354f503078564d336f495a79633257697357593138505846736b4254744966695132566d52425267304a485167574632494e4554496c554868434e683945546c6f445157594a4744556856336b564d68314548777344456d774a52334530526a4a4f4d51304f465651734f52462f42795530576a4a4f4d513d3d&ek=5479743865576p69646p3836495664454r55467n&ekdata=37f3ea29100206541a89ded34afd4682
+mkdir -p $LIME_INSTALL
+mkdir -p $LIME_SRC
+The $LIME_INSTALL folder will contain all the binaries, libraries, python scripts and grc blocks needed for our softwares to run. We will instruct cmake to install binaries in this specific folder. That way, everything that we will do will not mess with our existing system. If anything goes wrong, a simple wipe off of the $LIME_INSTALL folder will get you clean again.
+
+My environment will contain the following softwares:
+
+LimeSuite
+SoapySDR
+Volk
+Pothos
+GNU Radio
+rtl-sdr
+OsmoSDR
+gqrx
+So let’s clone each repository. The recursive option on the PothosCore line tells git to also fetch its submodules.
+
+cd $LIME_SRC
+git clone https://github.com/myriadrf/LimeSuite.git
+git clone https://github.com/pothosware/SoapySDR.git
+git clone https://github.com/gnuradio/volk.git
+git clone --recursive https://github.com/pothosware/PothosCore.git
+git clone https://github.com/gnuradio/gnuradio.git
+git clone https://github.com/osmocom/rtl-sdr.git
+git clone https://git.osmocom.org/gr-osmosdr
+git clone https://github.com/csete/gqrx.git
+Compiling and installing
+
+This is the most challenging bit, but the folks in the SDR community made a good job at keeping the compilation process simple. All in all, it is only a matter of running cmake, make and make install.
+
+Every repository contains instructions in its README file. It contains precious information about how to build, install and run. Most importantly, they describe the dependencies that each piece of software requires. Github projects’ Wiki pages also contain valuable instructions.
+
+These dependencies may in turn be installed by compiling them, or by using the package manager of your system. In the latter, I suggest that you recompile your entire software stack each time you upgrade your system. Otherwise, you may encounter weird bugs and behaviors in the event that a used library gets updated. Also keep in mind that every distribution is different: package names and content differ. You will need to do a bit of searching when you encounter compilation problems.
+
+Finally, pay attention to the CMake output after each invocation. It will allow you to check whether the needed functionalities were correctly enabled at build time.
+
+SoapySDR
+
+SoapySDR is the glue code between LimeSuite and Pothos/GNU Radio. It is necessary to compile Soapy before LimeSuite, as LimeSuite will need to link against it. As stated in Soapy’s Wiki, get the following dependencies.
+
+sudo apt-get install cmake g++ libpython-dev python-numpy swig
+Then simply run the following.
+
+cd $LIME_SRC/SoapySDR/
+mkdir mybuild
+cd mybuild
+cmake -DCMAKE_INSTALL_PREFIX=$LIME_INSTALL ..
+make -j8
+make install
+CMAKE_INSTALL_PREFIX instructs make to put all the binaries into $LIME_INSTALL when running make install.
+
+Now that SoapySDR is installed, we can run it from the $LIME_INSTALL folder. The LD_LIBRARY_PATH variable indicates where libraries can be found and takes precedence over our standard system library folder. Let’s have it point to the libraries we have just built. Note that we need permission to access the LimeSDR. Either add the right udev rule or run each program with sudo.
+
+[xrn mybuild]$ sudo LD_LIBRARY_PATH=$LIME_INSTALL/lib $LIME_INSTALL/bin/SoapySDRUtil
+######################################################
+## Soapy SDR -- the SDR abstraction library
+######################################################
+Usage SoapySDRUtil [options]
+Options summary:
+--help Print this help message
+--info Print module information
+--find[="driver=foo,type=bar"] Discover available devices
+--make[="driver=foo,type=bar"] Create a device instance
+--probe[="driver=foo,type=bar"] Print detailed information
+--check[=driverName] Check if driver is present
+Rate testing options:
+--args[="driver=foo"] Arguments for testing
+--rate[=stream rate Sps] Rate in samples per second
+--channels[="0, 1, 2"] List of channels, default 0
+--direction[=RX or TX] Specify the channel direction
+LimeSuite
+
+The LimeSuite documentation tells us the packages we need before compiling. According to chapter 3.1.1 Ubuntu, we will need the following packages installed on our system.
+
+#install core library and build dependencies
+sudo apt-get install git g++ cmake libsqlite3-dev
+#install hardware support dependencies
+sudo apt-get install libi2c-dev libusb-1.0-0-dev
+#install graphics dependencies
+sudo apt-get install libwxgtk3.0-dev freeglut3-dev
+Do not install libsoapysdr-dev as we want to use the latest version of the library we compiled above.
+
+Once again, building is straightforward.
+
+cd $LIME_SRC/LimeSuite/
+mkdir mybuild
+cd mybuild
+cmake -DCMAKE_INSTALL_PREFIX=$LIME_INSTALL -DCMAKE_PREFIX_PATH=$LIME_INSTALL ..
+make -j8
+make install
+CMAKE_PREFIX_PATH tells CMake where we installed the previous libraries (in this case, SoapySDR).
+
+Pay close attention to cmake‘s output. We should see the following.
+
+-- ######################################################
+-- ## LimeSuite enabled features
+-- ######################################################
+--
+[...]
+* SoapySDRLMS7, SoapySDR bindings for LMS7
+[...]
+If to the contrary, we have the following line somewhere, it means that we have done something wrong.
+
+Could NOT find SoapySDR (missing: SoapySDR_DIR)
+Let’s now test LimeSuite.
+
+sudo LD_LIBRARY_PATH=$LIME_INSTALL/lib/ $LIME_INSTALL/bin/LimeUtil
+sudo LD_LIBRARY_PATH=$LIME_INSTALL/lib/ $LIME_INSTALL/bin/LimeSuiteGUI
+Volk
+
+Volk is a utility created within the GNU Radio project. It profiles our system and discovers wich SIMD instructions are supported. These are special CPU instructions that allow the optimization of certain tasks by performing parallel computations. It will potentially optimize the various blocks used in Pothos/GNU Radio and gqrx. As always, let’s do the build thing.
+
+cd $LIME_SRC/volk
+mkdir mybuild
+cd mybuild
+cmake -DCMAKE_INSTALL_PREFIX=$LIME_INSTALL -DCMAKE_PREFIX_PATH=$LIME_INSTALL  ..
+make -j8
+make install
+We now have to run the profiling, this will take a while. Run the following command.
+
+LD_LIBRARY_PATH=$LIME_INSTALL/lib/ $LIME_INSTALL/bin/volk_profile
+More information can be found on this GNU Radio wiki page.
+
+Pothos
+
+As stated in Pothos’ README file, dependencies are already included in the source tree (as git submodules) and will be built automatically if they are missing from your system.
+
+cd $LIME_SRC/PothosCore
+mkdir mybuild
+cd mybuild
+cmake -DCMAKE_INSTALL_PREFIX=$LIME_INSTALL -DCMAKE_PREFIX_PATH=$LIME_INSTALL  ..
+make -j8
+make install
+Once again, we want to see
+
+* Soapy, SDR source and sink blocks for radio hardware
+in CMake‘s list of enabled features.
+
+Now let’s start Pothos with the following line.
+
+sudo LD_LIBRARY_PATH=$LIME_INSTALL/lib/ $LIME_INSTALL/bin/PothosFlow
+GNU Radio
+
+First of all, let’s have a look at the GNU Radio build guide. GNU Radio requires the boost library.
+
+sudo apt-get install libboost-all-dev
+We can proceed with the compilation. The ENABLE_INTERNAL_VOLK=OFF option tells CMake not to use the Volk submodule present in the gnuradio git tree. This way, make will use the Volk library we compiled above. Note that building gnuradio may take some time.
+
+cd $LIME_SRC/gnuradio
+mkdir mybuild
+cd mybuild
+cmake -DENABLE_INTERNAL_VOLK=OFF -DCMAKE_INSTALL_PREFIX=$LIME_INSTALL -DCMAKE_PREFIX_PATH=$LIME_INSTALL ..
+make -j8
+make install
+To run gnuradio, it needs to know where to find its blocks and python files. To do so, we use the PYTHONPATH and GRC_BLOCKS_PATH variables.
+
+sudo LD_LIBRARY_PATH=$LIME_INSTALL/lib/ PYTHONPATH=$LIME_INSTALL/lib/python2.7/dist-packages GRC_BLOCKS_PATH=$LIME_INSTALL/share/gnuradio/grc/blocks $LIME_INSTALL/bin/gnuradio-companion
+Note: If you’re not using a Debian-based distribution (Ubuntu users are not concerned), python modules will be installed in site-packages instead of dist-packages. The correct command would become
+
+sudo LD_LIBRARY_PATH=$LIME_INSTALL/lib/ PYTHONPATH=$LIME_INSTALL/lib/python2.7/site-packages GRC_BLOCKS_PATH=$LIME_INSTALL/share/gnuradio/grc/blocks $LIME_INSTALL/bin/gnuradio-companion
+Otherwise, you may end up with the following error message.
+
+Cannot import gnuradio.
+Is the python path environment variable set correctly?
+All OS: PYTHONPATH
+Is the library path environment variable set correctly?
+Linux: LD_LIBRARY_PATH
+Windows: PATH
+MacOSX: DYLD_LIBRARY_PATH
+rtl-sdr
+
+rtl-sdr is required by gr-osmosdr.
+
+cd $LIME_SRC/rtl-sdr
+mkdir mybuild
+cd mybuild
+cmake -DCMAKE_INSTALL_PREFIX=$LIME_INSTALL -DCMAKE_PREFIX_PATH=$LIME_INSTALL ..
+make -j8
+make install
+gr-osmosdr
+
+gr-osmosdr is required by gqrx.
+
+cd $LIME_SRC/gr-osmosdr
+mkdir mybuild
+cd mybuild
+cmake -DCMAKE_INSTALL_PREFIX=$LIME_INSTALL -DCMAKE_PREFIX_PATH=$LIME_INSTALL ..
+make -j8
+make install
+We need to make sure that SoapySDR support is enabled. If not, something went wrong.
+
+-- ######################################################
+-- # Gnuradio enabled components                         
+-- ######################################################
+[...]
+--   * SoapySDR support
+[...]
+gqrx
+
+gqrx builds against gnuradio, it is therefore mandatory to build gnuradio first. Dependencies information can be found in gqrx’ README. You will need Qt5 for gqrx.
+
+sudo apt-get install qtbase5-dev
+cd $LIME_SRC/gqrx
+mkdir mybuild
+cd mybuild
+cmake -DCMAKE_INSTALL_PREFIX=$LIME_INSTALL -DCMAKE_PREFIX_PATH=$LIME_INSTALL ..
+make -j8
+make install
+Running still follows the same logic.
+
+sudo LD_LIBRARY_PATH=$LIME_INSTALL/lib/ $LIME_INSTALL/bin/gqrx
+Acknowledgement
+
+This research work was supported by the Armasuisse Science and Technology Federal Office
+as part of project WISE [grant 8003514629].
+buildcmakecompilationgnuradiogqrxgrclimelimesdrlimesuitemakesdrsoapysoapysdr
+
+Xavier Ruppen
+
+I am a Ra&D engineer focusing on software development. I also do board design and work with FPGAs. My projects mainly involve HPC, FPGAs and SDR.
