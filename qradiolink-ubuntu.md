@@ -62,7 +62,7 @@ Finally and optinally we can make a script to launch it, so that we don't have t
 
 ```sh
 #!/bin/sh
-# runqradio.sh
+# qradiolink.sh
 
 LIME_INSTALL=$HOME/sdr_install # change this path to your install folder
 sudo LD_LIBRARY_PATH=$LIME_INSTALL/lib $LIME_INSTALL/bin/qradiolink
@@ -71,10 +71,11 @@ sudo LD_LIBRARY_PATH=$LIME_INSTALL/lib $LIME_INSTALL/bin/qradiolink
 Make sure to customize your LIME_INSTALL path above if yours is different. You can copy this file anywhere. For example:
 
 ```sh
-sudo cp runqradio.sh /usr/local/bin/qradiolink
+sudo cp qradiolink.sh /usr/local/bin/qradiolink
 sudo a+x /usr/local/bin/qradiolink
 ```
-Now you can launch and use the app. If you are limited on disk space, you can delete the `$LIME_SRC` directory. You may want to keep it though, since now you can fairly easily update each component to the latest changes. As of the time of writing this doc, the size of the source folder was 669 MB.
+
+Now you can launch and use the app. If you are limited on disk space, you can delete the `$LIME_SRC` directory (≈700 MB). You may want to keep it though, since now you can fairly easily update each component to the latest changes.
 
 ## Device Setup
 
