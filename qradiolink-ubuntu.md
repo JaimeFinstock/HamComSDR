@@ -14,7 +14,7 @@ This document is in development, therefore it has many errors. The instructions 
 
 ## Install the SDR Stack
 
-First, follow this excellent tutorial by Xavier Ruppen to compile the core SDR Stack.
+First, follow these excellent instructions by Xavier Ruppen to compile the core SDR Stack.
 
 [http://blog.reds.ch/?p=43]()
 
