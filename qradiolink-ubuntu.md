@@ -27,14 +27,14 @@ This will get you to the point where you can start installing QRadioLink. Some i
 
 ## Install QRadioLink Dependencies
 
-```
+```sh
 sudo apt install libconfig++-dev libgsm1-dev libprotobuf-dev libopus-dev libpulse-dev libasound2-dev libcodec2-dev libsqlite3-dev libjpeg-dev libprotoc-dev protobuf-compiler libqwt5-qt4-dev
 
 sudo apt install libasound2-dev libasound2 speex libspeex-dev libspeex-dev libspeexdsp1 libspeexdsp-dev
 ```
 ## Build QRadioLink
 
-```
+```sh
 cd $LIME_SRC
 git clone --depth 1 https://github.com/kantooon/qradiolink.git
 cd qradiolink/
@@ -54,13 +54,13 @@ Now you have `qradiolink` executable in `$LIME_SRC/qradiolink/build` directory. 
 
 We can move the executable into `$LIME_INSTALL/bin`.
 
-```
+```sh
 mv qradiolink "$LIME_INSTALL/bin/"
 ```
 
 Finally and optinally we can make a script to launch it, so that we don't have to type in the env variables every time.
 
-```
+```sh
 #!/bin/sh
 # runqradio.sh
 
@@ -70,7 +70,7 @@ sudo LD_LIBRARY_PATH=$LIME_INSTALL/lib $LIME_INSTALL/bin/qradiolink
 
 Make sure to customize your LIME_INSTALL path above if yours is different. You can copy this file anywhere. For example:
 
-```
+```sh
 sudo cp runqradio.sh /usr/local/bin/qradiolink
 sudo a+x /usr/local/bin/qradiolink
 ```
