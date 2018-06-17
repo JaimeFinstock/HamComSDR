@@ -65,7 +65,18 @@ Finally and optinally we can make a script to launch it, so that we don't have t
 # runqradio.sh
 
 LIME_INSTALL=$HOME/sdr_install # change this path to your install folder
-sudo LD_LIBRARY_PATH=$LIME_INSTALL/lib CPATH=$LIME_INSTALL/include $LIME_INSTALL/bin/qradiolink
+sudo LD_LIBRARY_PATH=$LIME_INSTALL/lib $LIME_INSTALL/bin/qradiolink
 ```
 
-Make sure to customize your LIME_INSTALL path above if yours is different.
+Make sure to customize your LIME_INSTALL path above if yours is different. You can copy this file anywhere. For example:
+
+```
+sudo cp runqradio.sh /usr/local/bin/qradiolink
+sudo a+x /usr/local/bin/qradiolink
+```
+Now you can launch the app. Make sure to go to the setup tab and update device args and the antenna names.
+
+For lime boards the device args should be `driver=lime,soapy=0`, the TX antenna can be either `BAND1` or `BAND2` and the RX antenna can be `LNAH` (for RX1_L) or `LNAH`, `LNAW`, `LB1` or `LB2`.
+
+
+That's it. If you find errors in this document, we will appreciate you filing an issue, and will try our best to help.
