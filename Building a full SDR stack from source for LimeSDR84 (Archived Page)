@@ -198,7 +198,7 @@ make install
 gr-osmosdr
 
 gr-osmosdr is required by gqrx.
-c
+
 cd $LIME_SRC/gr-osmosdr
 mkdir mybuild
 cd mybuild
