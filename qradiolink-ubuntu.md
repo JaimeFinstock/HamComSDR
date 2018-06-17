@@ -38,7 +38,6 @@ sudo apt install libasound2-dev libasound2 speex libspeex-dev libspeex-dev libsp
 cd $LIME_SRC
 git clone --depth 1 https://github.com/kantooon/qradiolink.git
 cd qradiolink/
-cd ..
 cd ext
 protoc --cpp_out=. Mumble.proto
 protoc --cpp_out=. QRadioLink.proto
@@ -47,7 +46,6 @@ mkdir build
 cd build
 qmake-qt4 ..
 LD_LIBRARY_PATH=$LIME_INSTALL/lib CPATH=$LIME_INSTALL/include make
-
 ```
 
 Now you have `qradiolink` executable in `$LIME_SRC/qradiolink/build` directory. You will need to launch it with sudo, specifying the LD_LIBRARY_PATH.
