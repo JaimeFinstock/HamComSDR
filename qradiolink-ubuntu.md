@@ -4,7 +4,7 @@ Since QRadioLink does not provide binaries for Ubuntu, building from source is c
 
 ## Status
 
-This document is in development, therefore it has many errors. The instructions here are not well tested and following them may not actually get you the intended result.
+This document is in development, therefore you should expect omissions and errors. In semver terms, you can think of it as v0.0.2.
 
 ## Assumptions
 
