@@ -81,7 +81,7 @@ Now you can launch and use the app. If you are limited on disk space, you can de
 The device needs to be configured in the "Setup" tab of QRadioLink. At minimum, device args and antenna names need to be changed from defaults.
 
 For lime boards:
-- the device args should be `driver=lime,soapy=0` or empty. The latter option will select the first SDR board the soapy finds.
+- the device args should be `driver=lime,soapy=0` or empty. The latter option will select the first SDR board the Soapy finds.
 - the TX antenna can be either `BAND1` or `BAND2` 
 - the RX antenna can be `LNAH` (for RX1_L) or `LNAH`, `LNAW`, `LB1` or `LB2`.
 
