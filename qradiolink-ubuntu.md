@@ -87,7 +87,7 @@ You can copy this file anywhere. For example:
 
 ```sh
 sudo cp qradiolink.sh /usr/local/bin/qradiolink
-sudo a+x /usr/local/bin/qradiolink
+sudo chmod a+x /usr/local/bin/qradiolink
 ```
 
 Now you can launch and use the app. If you are limited on disk space, you can delete the `$LIME_SRC` directory (≈700 MB). You may want to keep it though, since now you can easily update each component to the latest changes.
