@@ -63,7 +63,7 @@ cd ..
 mkdir build
 cd build
 qmake-qt4 ..
-LD_LIBRARY_PATH=$LIME_INSTALL/lib CPATH=$LIME_INSTALL/include make
+LD_LIBRARY_PATH=$LIME_INSTALL/lib CPATH=$LIME_INSTALL/include SUBLIBS="-L$LIME_INSTALL/lib make
 ```
 
 Now you have `qradiolink` executable in `$LIME_SRC/qradiolink/build` directory. You will need to specify the LD_LIBRARY_PATH when launching; we'll make a script for that.
