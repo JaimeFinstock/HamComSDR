@@ -10,14 +10,24 @@ This document is in development, therefore you should expect omissions and error
 
 - You are running Ubuntu 16.04. However, the instructions should be easily adaptable to other Linux distributions.
 - You have a Lime board plugged in. However, this should be usable with all the boards that Soapy SDR supports.
-- Basics such as git, gcc and cmake installed.
 
-## Install the Prerequisites
+## Install Some Prerequisites
+
+These will fill in some dependencies for the upcoming steps.
 
 ```
 sudo apt update
-sudo apt install git libpython-dev python-mako python-six
-sudo apt-get install libboost-all-dev
+sudo apt install git libpython-dev 
+sudo apt-get install libboost-all-dev # required by multiple components
+sudo apt install python-mako python-six # reqiored by Volk
+
+# required by gnuradio
+sudo apt install qt4-default python-qt4 libqwt5-qt4-dev libqwt5-qt4 python-qwt liblog4cpp5-dev
+sudo apt install fftw-dev python-fftw libfftw3-dev libfftw3-bin # fftw
+sudo apt install python-lxml python-wxgtk3.0 python-wxgtk3.0-dev # wx gui
+sudo apt install libgsl-dev libcppunit-dev
+sudo apt install python-cheetah python-gtk2-dev 
+
 ```
 
 ## Install the SDR Stack
