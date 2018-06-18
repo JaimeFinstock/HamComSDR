@@ -109,4 +109,4 @@ For lime boards:
 
 ## Conclusion
 
-This is it. If you find errors in this document, we will appreciate you filing an issue, and will try our best to help.
+This is it. If you find errors in this document, we will appreciate you filing an issue, and will try our best to help. 
