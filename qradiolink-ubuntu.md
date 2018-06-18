@@ -96,6 +96,10 @@ You can also zip the entire `$LIME_INSTALL` folder and move it to another machin
 
 ## Device Setup
 
+This section is important. QRadioLink won't work unless you follow instructions here.
+
+The first time you run qradiolink, you have to use sudo, or it won't be able to read the devices.
+
 The device needs to be configured in the "Setup" tab of QRadioLink. At minimum, device args and antenna names need to be changed from defaults.
 
 For lime boards:
