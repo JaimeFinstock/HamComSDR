@@ -12,6 +12,14 @@ This document is in development, therefore you should expect omissions and error
 - You have a Lime board plugged in. However, this should be usable with all the boards that Soapy SDR supports.
 - Basics such as git, gcc and cmake installed.
 
+## Install the Prerequisites
+
+```
+sudo apt update
+sudo apt install git libpython-dev python-mako python-six
+sudo apt-get install libboost-all-dev
+```
+
 ## Install the SDR Stack
 
 First, follow these excellent instructions by Xavier Ruppen to compile the core SDR Stack.
