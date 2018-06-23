@@ -9,7 +9,7 @@ This document is in development, therefore you should expect omissions and error
 ## Assumptions
 
 - You are running Ubuntu 16.04. However, the instructions should be easily adaptable to other Linux distributions.
-- You have a Lime board plugged in. However, this should be usable with all the boards that Soapy SDR supports.
+- You have a Lime board plugged in. However, this should be usable with all the boards that Soapy SDR supports with the possibility of an additional step of installing their particular drivers.
 
 ## Install Some Prerequisites
 
