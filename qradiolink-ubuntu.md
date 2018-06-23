@@ -38,8 +38,8 @@ Please follow these excellent instructions by Xavier Ruppen to compile the core 
 
 This will get you to the point where you can start installing QRadioLink. Some important points:
 
-- We recommend you use the naming conventions suggested in the above link so that you can copy and paste code snippets. Particularly, `$LIME_INSTALL` and `$LIME_SRC` will be used here.
-- We won't be using Pothos or Gqrx, so feel free to skip those steps.
+- We recommend you use the naming conventions suggested in the above link so that you can copy and paste code snippets. Particularly, variables `$LIME_INSTALL` and `$LIME_SRC` will be used here.
+- We won't be using Pothos or Gqrx, so feel free to skip the corresponding installation steps.
 - If you are having trouble installing with apt, try aptitude. Often it will be able to install where apt will not.
 
 
