@@ -103,7 +103,7 @@ You'll need to set up the udev rules by running `sudo $LIME_SRC/LimeSuite/udev-r
 The device needs to be configured in the "Setup" tab of QRadioLink. At minimum, device args and antenna names need to be changed from defaults.
 
 For lime boards:
-- the device args should be `driver=lime,soapy=0` or empty. The latter option will select the first SDR board the Soapy finds.
+- the device args should be `driver=lime,soapy=0` or empty. The latter option will select the first SDR board Soapy finds.
 - the TX antenna can be either `BAND1` or `BAND2`.
 - the RX antenna can be `LNAL` (for RX1_L) or `LNAH`, `LNAW`, `LB1` or `LB2`.
 
