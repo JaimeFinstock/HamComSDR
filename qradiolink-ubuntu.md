@@ -63,7 +63,7 @@ cd ..
 mkdir build
 cd build
 qmake-qt4 ..
-LD_LIBRARY_PATH=$LIME_INSTALL/lib CPATH=$LIME_INSTALL/include SUBLIBS="-L$LIME_INSTALL/lib make
+LD_LIBRARY_PATH="$LIME_INSTALL/lib" CPATH="$LIME_INSTALL/include" SUBLIBS="-L$LIME_INSTALL/lib" make
 ```
 
 Now you have the `qradiolink` executable in `$LIME_SRC/qradiolink/build` directory. You will need to specify the LD_LIBRARY_PATH when launching; we'll make a script for that.
@@ -80,8 +80,8 @@ Create the file qradiolink.sh, as below. Make sure to customize your LIME_INSTAL
 #!/bin/sh
 # qradiolink.sh
 
-LIME_INSTALL=$HOME/sdr_install # change this path to your install folder
-LD_LIBRARY_PATH=$LIME_INSTALL/lib $LIME_INSTALL/bin/qradiolink
+LIME_INSTALL="$HOME/sdr_install" # change this path to your install folder
+LD_LIBRARY_PATH="$LIME_INSTALL/lib" "$LIME_INSTALL"/bin/qradiolink
 ```
 You can copy this file anywhere. For example:
 
