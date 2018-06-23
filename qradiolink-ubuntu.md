@@ -32,7 +32,7 @@ sudo apt install python-cheetah python-gtk2-dev
 
 ## Install the SDR Stack
 
-First, follow these excellent instructions by Xavier Ruppen to compile the core SDR Stack.
+Please follow these excellent instructions by Xavier Ruppen to compile the core SDR Stack.
 
 [http://blog.reds.ch/?p=43](http://blog.reds.ch/?p=43)
 
