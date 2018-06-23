@@ -66,7 +66,7 @@ qmake-qt4 ..
 LD_LIBRARY_PATH=$LIME_INSTALL/lib CPATH=$LIME_INSTALL/include SUBLIBS="-L$LIME_INSTALL/lib make
 ```
 
-Now you have `qradiolink` executable in `$LIME_SRC/qradiolink/build` directory. You will need to specify the LD_LIBRARY_PATH when launching; we'll make a script for that.
+Now you have the `qradiolink` executable in `$LIME_SRC/qradiolink/build` directory. You will need to specify the LD_LIBRARY_PATH when launching; we'll make a script for that.
 
 First, move the executable into `$LIME_INSTALL/bin/`.
 
@@ -98,7 +98,7 @@ You can also zip the entire `$LIME_INSTALL` folder and move it to another machin
 
 This section is important. QRadioLink won't work unless you follow instructions here.
 
-The first time you run qradiolink, you have to use sudo, or it won't be able to read the devices.
+You'll need to set up the udev rules by running `sudo $LIME_SRC/LimeSuite/udev-rules/install.sh`, if you haven't done so already. Alternatively, if security isn't a concern, you can run `qradiolink` with `sudo` instead.
 
 The device needs to be configured in the "Setup" tab of QRadioLink. At minimum, device args and antenna names need to be changed from defaults.
 
