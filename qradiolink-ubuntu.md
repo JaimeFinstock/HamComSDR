@@ -4,11 +4,11 @@ Since QRadioLink does not provide binaries for Ubuntu, building from source is c
 
 ## Status
 
-This document is in development, therefore you should expect omissions and errors. In semver terms, you can think of it as v0.0.2.
+This document is in development, therefore you should expect omissions and errors. The instructions here have been only tested once (after they were first created) on a fresh Ubuntu installation.
 
 ## Assumptions
 
-- You are running Ubuntu 16.04. However, the instructions should be easily adaptable to other Linux distributions.
+- You are running a fresh installation of Ubuntu 16.04. However, the instructions should be easily adaptable to other Linux distributions.
 - You have a Lime board plugged in. However, this should be usable with all the boards that Soapy SDR supports with the possibility of an additional step of installing their particular drivers.
 
 ## Install Some Prerequisites
