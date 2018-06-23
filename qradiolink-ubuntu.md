@@ -48,7 +48,7 @@ This will get you to the point where you can start installing QRadioLink. Some i
 ```sh
 sudo apt install libconfig++-dev libgsm1-dev libprotobuf-dev libopus-dev libpulse-dev libasound2-dev libcodec2-dev libsqlite3-dev libjpeg-dev libprotoc-dev protobuf-compiler libqwt5-qt4-dev
 
-sudo apt install libasound2-dev libasound2 speex libspeex-dev libspeex-dev libspeexdsp1 libspeexdsp-dev
+sudo apt install libasound2-dev libasound2 speex libspeex-dev libspeexdsp1 libspeexdsp-dev
 ```
 ## Build QRadioLink
 
