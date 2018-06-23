@@ -98,7 +98,7 @@ You can also zip the entire `$LIME_INSTALL` folder and move it to another machin
 
 This section is important. QRadioLink won't work unless you follow instructions here.
 
-You'll need to set up the udev rules by running `sudo $LIME_SRC/LimeSuite/udev-rules/install.sh`, if you haven't done so already. Alternatively, if security isn't a concern, you can run `qradiolink` with `sudo` instead.
+You'll need to set up the udev rules by running `sudo $LIME_SRC/LimeSuite/udev-rules/install.sh`, if you haven't done so already. Alternatively, if security isn't a concern, you can run `qradiolink` with `sudo`.
 
 The device needs to be configured in the "Setup" tab of QRadioLink. At minimum, device args and antenna names need to be changed from defaults.
 
