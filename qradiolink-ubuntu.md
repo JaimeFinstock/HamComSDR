@@ -74,7 +74,7 @@ First, move the executable into `$LIME_INSTALL/bin/`.
 mv qradiolink "$LIME_INSTALL/bin/"
 ```
 
-Create the file qradiolink.sh, as below. Make sure to customize your LIME_INSTALL path above if yours is different.
+Create the file qradiolink.sh, as below. Make sure to customize your LIME_INSTALL path if yours is different.
 
 ```sh
 #!/bin/sh
@@ -89,18 +89,13 @@ You can copy this file anywhere. For example:
 sudo cp qradiolink.sh /usr/local/bin/qradiolink
 sudo chmod a+x /usr/local/bin/qradiolink
 ```
-
-Now you can launch and use the app. If you are limited on disk space, you can delete the `$LIME_SRC` directory (≈700 MB). You may want to keep it though, since now you can easily update each component to the latest changes.
-
-You can also zip the entire `$LIME_INSTALL` folder and move it to another machine, which will need only a few basic packages installed with `apt`.
+Now you can launch the app, but it still requires set up. 
 
 ## Device Setup
 
-This section is important. QRadioLink won't work unless you follow instructions here.
+First, the udev rules have to be installed. You can do this by running `sudo $LIME_SRC/LimeSuite/udev-rules/install.sh`, if you haven't done so already. Alternatively, if security isn't a concern, you can run `qradiolink` with `sudo`.
 
-You'll need to set up the udev rules by running `sudo $LIME_SRC/LimeSuite/udev-rules/install.sh`, if you haven't done so already. Alternatively, if security isn't a concern, you can run `qradiolink` with `sudo`.
-
-The device needs to be configured in the "Setup" tab of QRadioLink. At minimum, device args and antenna names need to be changed from defaults.
+The device has to be configured in the "Setup" tab of QRadioLink. At minimum, device args and antenna names need to be changed from defaults.
 
 For lime boards:
 - the device args should be `driver=lime,soapy=0` or empty. The latter option will select the first SDR board Soapy finds.
@@ -108,5 +103,9 @@ For lime boards:
 - the RX antenna can be `LNAL` (for RX1_L) or `LNAH`, `LNAW`, `LB1` or `LB2`.
 
 ## Conclusion
+
+If you are limited on disk space, you can delete the `$LIME_SRC` directory (≈700 MB). You may want to keep it though, since now you can easily update each component to the latest changes.
+
+You can also zip the entire `$LIME_INSTALL` folder and move it to another machine, which will need only a few basic packages installed with `apt`.
 
 This is it. If you find errors in this document, we will appreciate you filing an issue, and will try our best to help. 
