@@ -116,6 +116,8 @@ make
 make install
 ```
 
+Now you should have the `sdrangel` executable in `$LIME_INSTALL/bin`.
+
 ## Conclusion
 
 If you are limited on disk space, you can delete the `$LIME_SRC` directory (≈700 MB). You may want to keep it though, since now you can easily update each component to the latest changes.
