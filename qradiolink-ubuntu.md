@@ -4,7 +4,7 @@ Since QRadioLink does not provide binaries for Ubuntu, building from source is c
 
 ## Status
 
-This document is in development, therefore you should expect omissions and errors. After their initial creation, the instructions here have been tested once on a fresh Ubuntu installation.
+This document is in development, therefore you should expect omissions and errors. After their initial creation, the instructions here have been tested once on a fresh Ubuntu installation. Since then, we've added the SDR Angel section and udev rules installation instruction, neither of which have been tested on a fresh OS.
 
 ## Assumptions
 
@@ -101,6 +101,20 @@ For lime boards:
 - the device args should be `driver=lime,soapy=0` or empty. The latter option will select the first SDR board Soapy finds.
 - the TX antenna can be either `BAND1` or `BAND2`.
 - the RX antenna can be `LNAL` (for RX1_L) or `LNAH`, `LNAW`, `LB1` or `LB2`.
+
+## Bonus: SDR Angel
+
+You can now easily install [SDR Angel](https://github.com/f4exb/sdrangel) in a similar way.
+
+```
+cd $LIME_SRC
+git clone --depth 1 https://github.com/f4exb/sdrangel.git
+cd sdrangel
+sudo apt install libqt5multimedia5-plugins qtmultimedia5-dev qttools5-dev qttools5-dev-tools libqt5opengl5-dev qtbase5-dev libusb-1.0 librtlsdr-dev libboost-all-dev libasound2-dev pulseaudio libnanomsg-dev libopencv-dev libsqlite3-dev libxml2-dev bison flex ffmpeg libavcodec-dev libavformat-dev
+cmake -DCMAKE_INSTALL_PREFIX=$LIME_INSTALL -DCMAKE_PREFIX_PATH=$LIME_INSTALL ..
+make
+make install
+```
 
 ## Conclusion
 
