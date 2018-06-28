@@ -121,6 +121,7 @@ cd $LIME_SRC
 git clone --depth 1 https://github.com/f4exb/sdrangel.git
 cd sdrangel
 sudo apt install libqt5multimedia5-plugins qtmultimedia5-dev qttools5-dev qttools5-dev-tools libqt5opengl5-dev qtbase5-dev libusb-1.0 librtlsdr-dev libboost-all-dev libasound2-dev pulseaudio libnanomsg-dev libopencv-dev libsqlite3-dev libxml2-dev bison flex ffmpeg libavcodec-dev libavformat-dev
+mkdir mybuild && cd mybuild
 cmake -DCMAKE_INSTALL_PREFIX=$LIME_INSTALL -DCMAKE_PREFIX_PATH=$LIME_INSTALL ..
 make
 make install
