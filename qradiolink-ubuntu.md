@@ -36,6 +36,8 @@ Please follow these excellent instructions by Xavier Ruppen to compile the core 
 
 [http://blog.reds.ch/?p=43](http://blog.reds.ch/?p=43)
 
+_Important_: Until this issue https://github.com/gnuradio/gnuradio/issues/1856 is resolved, GNU Radio only works on the `351dfb8ec4b07dddbd921f994c2bfd89cc35eadf` revision. After cloning the gnuradio repository, you can get to it by `git checkout 351dfb8ec4b07dddbd921f994c2bfd89cc35eadf`.
+
 This will get you to the point where you can start installing QRadioLink. Some important points:
 
 - We recommend you use the naming conventions suggested in the above link so that you can copy and paste code snippets. Particularly, variables `$LIME_INSTALL` and `$LIME_SRC` will be used here.
