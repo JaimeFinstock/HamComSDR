@@ -95,7 +95,15 @@ Now you can launch the app, but it still requires set up.
 
 ## Device Setup
 
-First, the udev rules have to be installed. You can do this by running `sudo $LIME_SRC/LimeSuite/udev-rules/install.sh`, if you haven't done so already. Alternatively, if security isn't a concern, you can run `qradiolink` with `sudo`.
+First, the udev rules have to be installed. You can do this by running 
+
+```
+cd $LIME_SRC/LimeSuite/udev-rules
+chmod a+x install.sh
+sudo ./install.sh
+```
+
+, if you haven't done so already. Alternatively, if security isn't a concern, you can run `qradiolink` with `sudo`.
 
 The device has to be configured in the "Setup" tab of QRadioLink. At minimum, device args and antenna names need to be changed from defaults.
 
