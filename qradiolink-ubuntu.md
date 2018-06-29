@@ -1,4 +1,4 @@
-# How to Compile QRadioLink for use with LimeSDR on Ubuntu 16.04
+# How to Compile QRadioLink and SDR Angel for Lime SDR on Ubuntu 16.04
 
 Since QRadioLink does not provide binaries for Ubuntu, building from source is currently the only option. After following this guide, you will have the entire SDR stack compiled from source and installed into one folder, which you can then easily move to other machines.
 
@@ -93,7 +93,7 @@ sudo chmod a+x /usr/local/bin/qradiolink
 ```
 Now you can launch the app, but it still requires set up. 
 
-## Device Setup
+## QRadioLink Device Setup
 
 First, the udev rules have to be installed. You can do this by running 
 
@@ -112,7 +112,7 @@ For lime boards:
 - the TX antenna can be either `BAND1` or `BAND2`.
 - the RX antenna can be `LNAL` (for RX1_L) or `LNAH`, `LNAW`, `LB1` or `LB2`.
 
-## Bonus: SDR Angel
+## Build SDR Angel
 
 You can now easily install [SDR Angel](https://github.com/f4exb/sdrangel) in a similar way.
 
