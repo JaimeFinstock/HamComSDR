@@ -4,7 +4,7 @@ Since QRadioLink does not provide binaries for Ubuntu, building from source is c
 
 ## Status
 
-This document is in development, therefore you should expect omissions and errors. After their initial creation, the instructions here have been tested once on a fresh Ubuntu installation. Since then, we've added the SDR Angel section and udev rules installation instruction, neither of which have been tested on a fresh OS.
+This document is in development, therefore you should expect omissions and errors. After their initial creation, the instructions here have been tested once on a fresh Ubuntu installation.
 
 ## Assumptions
 
