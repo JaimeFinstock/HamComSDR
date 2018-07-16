@@ -18,3 +18,9 @@ RuntimeError: audio_oss_sink
 libusb: warning [libusb_exit] application left some devices open
 
 >>> Done
+
+
+!!! 
+but should be
+
+ `gr::log :INFO: audio source - Audio sink arch: oss`
