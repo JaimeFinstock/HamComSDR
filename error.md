@@ -23,4 +23,4 @@ libusb: warning [libusb_exit] application left some devices open
 !!! 
 but should be
 
- `gr::log :INFO: audio source - Audio sink arch: oss`
+ `gr::log :INFO: audio source - Audio sink arch: alsa`
